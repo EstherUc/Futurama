@@ -1,25 +1,49 @@
-import { cantGetUrlError } from "../components/Errors.js";
+import { ApiError, CharacterNotFoundError } from "../errors/Errors.js";
+
+const API_URL = "https://futuramaapi.com/api";
 class ApiFuturamaService {
 
-  constructor() {
-    this.baseUrl = "https://futuramaapi.com/api";
+  //obtener todos los personajes
+  async getCharacters(){
+    const url = `${API_URL}/characters`;
+
+    const response = await fetch(url);
+
+    if(!response.ok){
+      throw new ApiError("No se han podido obtener los personajes",response.status);
+    } 
+
+    const result = await response.json();
+
+    return result;
   }
 
-  async getCharacters() {
 
-    const response = await fetch(
-      `${this.baseUrl}/characters?page=1&size=12`
-    );
+ //obtener un personaje específico (Por id)
+async getCharacterById(idCharacter){
+    const url = `${API_URL}/characters/${idCharacter}`;
 
-    if (!response.ok) {
-      throw new cantGetUrlError;
+    const response = await fetch (url);
+
+    if (response.status === 404) {
+      throw new CharacterNotFoundError(idCharacter);
+      
     }
 
-    const data = await response.json();
+    if(!response.ok){
+      throw new ApiError("Error al obtener el personaje", response.status);
+    }
 
-    return data;
+    const result = await response.json();
+
+    return result;
+    
   }
-} 
+
+}
+
 
 export default ApiFuturamaService;
+
+
 
