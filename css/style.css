@@ -12,12 +12,38 @@ html{
     box-sizing: inherit;
     margin: 0;
     padding: 0;
+}
+
+a{
     text-decoration: none;
 }
 
 
 
 /* ////////////////// MOBILE DESIGN //////////////////// */
+
+/* Nombramos cada área del Grid principal */
+.header{ grid-area: header;}
+.main{ grid-area: main;}
+.footer{ grid-area: footer;}
+
+body{
+    min-height: 100vh;
+
+    background-color: var(--color-background);
+    color: var(--color-text);
+    font-family: var(--font-secondary);
+
+    /* Distribución principal de la página */
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+        "header"
+        "main"
+        "footer";
+
+}
 
 
 
@@ -42,6 +68,35 @@ html{
 
 
 
+/* -------------------------------------------
+|                   Footer                    |
+----------------------------------------------*/
+.footer{
+    padding: 16px 24px;
+    background-color: var(--color-background);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.footer__copyright, 
+.footer__author{
+    font-size: 0.75rem;
+}
+
+.footer__copyright{
+    color: var(--color-text-secondary);
+}
+
+.footer__author{
+    color: var(--color-secondary);
+    font-weight: 600;
+}
+
+
+
 
 
 /*  /////////////////////////////////////////////////////////// 
@@ -49,8 +104,12 @@ html{
 /* ////////////////////////////////////////////////////////// */
 
 
-@media (min-width:1024px){
-
+@media (min-width:768px){
+    .footer{
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 16px 40px;
+    }
 }
 
 
