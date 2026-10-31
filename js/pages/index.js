@@ -1,15 +1,30 @@
 import ApiFuturamaService from "../services/ApiFuturamaService.js";
+import Character from "../models/Character.js";
 
 const api = new ApiFuturamaService();
 
 async function init() {
   try {
-    const datos = await api.getCharacters();
+    const data = await api.getCharacters();
 
-    console.log(datos);
-    console.log(datos.items);
+    console.log(data);
+    console.log(data.items);
+    console.log(data.total);
+    console.log(data.pages);
+    
+    
+
+    const character = await api.getCharacterById(1);
+    
+
+
+    console.log(character);
+    
   } catch (error) {
-    console.error(error);
+    //console.error(error);
+    console.error(error.name);
+    console.error(error.message);
+    console.error(error.status);
   }
 }
 
