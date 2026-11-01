@@ -1,4 +1,5 @@
 import ApiFuturamaService from "../services/ApiFuturamaService.js";
+import "../components/NavMenu.js";
 import Character from "../models/Character.js";
 
 const api = new ApiFuturamaService();

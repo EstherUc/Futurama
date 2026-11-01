@@ -1,0 +1,38 @@
+
+:root{
+
+/* =============== MAIN COLORS ===============*/
+
+   --color-primary:     #071B3D; /* Azul galaxia */
+   --color-secondary:   #C3F53C; /* Verde Lima */
+   --color-details:     #7855D9; /* Morado */
+
+
+/* =============== BACKGROUND ===============*/
+   
+   --color-background:   #040E23; /* Azul/Negro oscuro - Fondo general */
+   --color-surface:         #10284F; /* Azul -  Fondo de tarjetas, filtros y contenedores */
+
+/* =============== TEXTS ===============*/                             
+
+   --color-text:           #FFFFFF;  /* Blanco - Texto principal */
+   --color-text-secondary: #C8D4E8;  /* Azul muy claro - Texto secundario */
+   --color-text-dark:      #071B3D;  /* Azul/Negro - Texto sobre verde lima */
+
+
+/*=============== BORDERS ===============*/    
+
+   --color-border:      #7855D9;  /* Morado - Bordes destacados */
+   --color-border-soft: #293E65;  /* Azulado - Bordes discretos */
+
+
+/*=============== FOOTER ===============*/
+
+
+
+/*=============== FONTS ===============*/
+
+   --font-primary:      "Barlow Condensed", Impact, sans-serif;
+   --font-secondary:       "Inter", Arial, sans-serif;
+
+}

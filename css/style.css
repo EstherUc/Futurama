@@ -1,5 +1,5 @@
 /* -------------------------------------------
-|             General styles                |
+|             General styles                 |
 ----------------------------------------------*/
 
 html{
@@ -12,13 +12,40 @@ html{
     box-sizing: inherit;
     margin: 0;
     padding: 0;
+}
+
+a{
     text-decoration: none;
 }
 
 
 
-
 /* ////////////////// MOBILE DESIGN //////////////////// */
+
+/* Nombramos cada área del Grid principal */
+.header{ grid-area: header;}
+.main{ grid-area: main;}
+.footer{ grid-area: footer;}
+
+body{
+    min-height: 100vh;
+    min-height: 100dvh;
+
+    background-color: var(--color-background);
+    color: var(--color-text);
+    font-family: var(--font-secondary);
+
+    /* Distribución principal de la página */
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+        "header"
+        "main"
+        "footer";
+
+}
+
 
 
 /* -------------------------------------------
@@ -32,6 +59,62 @@ html{
 |                 Nav Styles                 |
 ----------------------------------------------*/
 
+.nav{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 24px;
+}
+
+.nav__link{
+    color: var(--color-text);
+    
+    display: inline-block;
+    padding: 8px 0;
+}
+
+.nav__link--active{
+    color: var(--color-secondary);
+    border-bottom: 2px solid var(--color-secondary);
+}
+
+.nav__logo{
+    display: block;
+    width: 60px;
+    height: 60px;
+}
+
+.nav__menu-burger{
+    padding: 8px 12px;
+    background-color: transparent;
+    color: var(--color-secondary);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.nav__menu{
+    flex-direction: column;
+    gap: 20px;
+    z-index: 10;
+
+    display: none;
+    list-style: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    padding: 20px 24px;
+
+    background-color: var(--color-primary);
+}
+
+.nav__menu--open{
+    display: flex;
+}
+
 
 
 
@@ -39,6 +122,101 @@ html{
 |                Main Styles                  |
 ----------------------------------------------*/
 
+/* hero styles */
+.hero{
+    padding: 32px 24px;
+}
+
+.hero__title{
+    font-family: var(--font-primary);
+    font-size: 2.5rem;
+    line-height: 1.1;
+}
+
+.hero__title-highlight{
+    display: block;  /* para que "UNIVERSO FUTURAMA" aparezca en una nueva línea (span en elemento de línea por defecto) */
+    color: var(--color-secondary);
+}
+
+.hero__description{
+    color: var(--color-text-secondary);
+    line-height: 1.5;
+    margin-top: 16px;
+}
+
+/* contenedor de los botones */
+.hero__actions{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 24px;
+}
+
+/* estilos comunes para los dos botones */
+.hero__button{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 24px;
+    border-radius: 50px;
+    border: 2px solid transparent;
+    
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+}
+
+.hero__button-arrow{
+    width: 22px;
+    height: 22px;
+    flex-shrink: 0; /* Para que la flecha conserve su tamaño aunque el botón tenga poco espacio */
+}
+
+/* botón principal - Explorar */
+.hero__button--primary{
+    background-color: var(--color-secondary);
+    color: var(--color-text-dark);
+}
+
+/* botón secundario - Mi tripulación */
+.hero__button--secondary{
+    background-color: transparent;
+    color: var(--color-text);
+    border-color: var(--color-border);
+}
+
+
+
+
+
+/* -------------------------------------------
+|                   Footer                    |
+----------------------------------------------*/
+.footer{
+    padding: 16px 24px;
+    background-color: var(--color-background);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.footer__copyright, 
+.footer__author{
+    font-size: 0.75rem;
+}
+
+.footer__copyright{
+    color: var(--color-text-secondary);
+}
+
+.footer__author{
+    color: var(--color-secondary);
+    font-weight: 600;
+}
 
 
 
@@ -49,8 +227,52 @@ html{
 /* ////////////////////////////////////////////////////////// */
 
 
-@media (min-width:1024px){
+@media (min-width:768px){
 
+
+/* -------------------------------------------
+|                Header Styles               |
+----------------------------------------------*/
+
+
+/* -------------------------------------------
+|                 Nav Styles                 |
+----------------------------------------------*/
+
+.nav__menu-burger{
+    display: none;
+}
+
+.nav__menu{
+    display: flex;
+    position: static;
+    flex-direction: row;
+    align-items: center;
+    gap: 32px;
+    padding: 0;
+    background-color: transparent;
+}
+
+
+/* -------------------------------------------
+|                Main Styles                  |
+----------------------------------------------*/
+
+/* contenedor de los botones */
+.hero__actions{
+    flex-direction: row;
+}
+
+
+/* -------------------------------------------
+|                   Footer                    |
+----------------------------------------------*/
+
+    .footer{
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 16px 40px;
+    }
 }
 
 

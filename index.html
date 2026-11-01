@@ -4,14 +4,90 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Futurama</title>
+    <link rel="icon" href="assets/img/logo.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/variables.css">
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
 
-    <h1>Futurama</h1>
+    <header class="header">
+        <nav class="nav" aria-label="navegación principal">
 
-  <main id="contenedor-personajes"></main>
+            <a class="nav__brand" href="./index.html">
+                <img class="nav__logo" src="./assets/img/logo.png" width="60" height="60" alt="Logo Planet Espress - Inicio" >
+            </a>
+
+            <button 
+                class="nav__menu-burger" 
+                id="button-burger"
+                type="button" 
+                aria-label="Abrir menú" 
+                aria-expanded="false" 
+                aria-controls="main-navigation">
+                ☰
+            </button>
+
+            <ul class="nav__menu" id="main-navigation">
+                <li class="nav__item">
+                    <a class="nav__link nav__link--active" href="./index.html" aria-current="page">Inicio</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="./explore.html">Explorar</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="./myCrew.html">Mi tripulación</a>
+                </li>
+            </ul>
+
+        </nav>
+        
+    </header>
+
+    <main class="main">
+
+        <section class="hero">
+            
+            <div class="hero__content">
+
+                <h1 class="hero__title">
+                    EXPLORA EL
+                    <span class="hero__title-highlight">
+                        UNIVERSO FUTURAMA
+                    </span>
+                </h1>
+
+                <p class="hero__description">Conoce a sus personajes y reúne tu propia tripulación intergaláctica</p>
+                
+            </div>
+
+            <div class="hero__actions">
+
+                <a class="hero__button hero__button--primary" href="./explore.html">
+                    <span class="hero__button-text">Explorar personajes</span>
+                    <img class="hero__button-arrow" src="./assets/icons/flecha_azul_marino_oscuro.svg" width="25" height="25" alt="Flecha botón explorar personajes">
+                </a>
+                <a class="hero__button hero__button--secondary" href="./myCrew.html">
+                    <span class="hero__button-text">Mi tripulación</span>
+                    <img class="hero__button-arrow" src="./assets/icons/flecha_morada.svg" width="25" height="25" alt="Flecha botón Mi tripulación">
+                </a>
+
+            </div>
+
+        </section>
+
+        <section class="features">
+            <!-- Descubre, Colecciona y Sorpréndete -->
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <p class="footer__copyright">© 2026 Planet Express · Proyecto educativo</p>
+        <p class="footer__author">Esther Uclés</p>
+    </footer>
     
 
   <script type="module" src="js/pages/index.js"></script>
