@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Futurama</title>
+    <link rel="icon" href="assets/img/logo.png" type="image/png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -13,10 +14,38 @@
 <body>
 
     <header class="header">
-        <!-- Logo y navegación -->
+        <nav class="nav" aria-label="navegación principal">
+
+            <a class="nav__brand" href="./index.html">
+                <img class="nav__logo" src="./assets/img/logo.png" width="60" height="60" alt="Logo Planet Espress - Inicio" >
+            </a>
+
+            <button 
+                class="nav__menu-burger" 
+                type="button" 
+                aria-label="Abrir menú" 
+                aria-expanded="false" 
+                aria-controls="main-navigation">
+                ☰
+            </button>
+
+            <ul class="nav__menu" id="main-navigation">
+                <li class="nav__item">
+                    <a class="nav__link nav__link--active" href="./index.html" aria-current="page">Inicio</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="./explore.html">Explorar</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="./myCrew.html">Mi tripulación</a>
+                </li>
+            </ul>
+
+        </nav>
+        
     </header>
 
-    <main>
+    <main class="main">
 
         <section class="hero">
             <!-- Portada con imagen, título y botones -->
