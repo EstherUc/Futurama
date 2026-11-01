@@ -122,6 +122,72 @@ body{
 |                Main Styles                  |
 ----------------------------------------------*/
 
+/* hero styles */
+.hero{
+    padding: 32px 24px;
+}
+
+.hero__title{
+    font-family: var(--font-primary);
+    font-size: 2.5rem;
+    line-height: 1.1;
+}
+
+.hero__title-highlight{
+    display: block;  /* para que "UNIVERSO FUTURAMA" aparezca en una nueva línea (span en elemento de línea por defecto) */
+    color: var(--color-secondary);
+}
+
+.hero__description{
+    color: var(--color-text-secondary);
+    line-height: 1.5;
+    margin-top: 16px;
+}
+
+/* contenedor de los botones */
+.hero__actions{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 24px;
+}
+
+/* estilos comunes para los dos botones */
+.hero__button{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 24px;
+    border-radius: 50px;
+    border: 2px solid transparent;
+    
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+}
+
+.hero__button-arrow{
+    width: 22px;
+    height: 22px;
+    flex-shrink: 0; /* Para que la flecha conserve su tamaño aunque el botón tenga poco espacio */
+}
+
+/* botón principal - Explorar */
+.hero__button--primary{
+    background-color: var(--color-secondary);
+    color: var(--color-text-dark);
+}
+
+/* botón secundario - Mi tripulación */
+.hero__button--secondary{
+    background-color: transparent;
+    color: var(--color-text);
+    border-color: var(--color-border);
+}
+
+
 
 
 
@@ -192,7 +258,10 @@ body{
 |                Main Styles                  |
 ----------------------------------------------*/
 
-
+/* contenedor de los botones */
+.hero__actions{
+    flex-direction: row;
+}
 
 
 /* -------------------------------------------
