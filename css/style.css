@@ -70,7 +70,7 @@ body{
 .nav__link{
     color: var(--color-text);
     
-    display: block;
+    display: inline-block;
     padding: 8px 0;
 }
 
