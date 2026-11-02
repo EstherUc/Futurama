@@ -61,11 +61,64 @@
     <main class="main">
 
         <section class="filters" aria-label="Filtros de personajes">
-            <!-- Buscador y filtros -->
+            
+            <form class="filters__form" id="character-filters">
+                <!-- Buscador -->
+                <input class="filters__search" id="character-search" type="search" name="search" placeholder="Buscar personaje...">
+
+                <!-- Filtro por especie -->
+                 <select class="filters__select" id="filter-species" name="species">
+                    <option value="">Especie</option>
+                 </select>
+
+                 <!-- Filtro por estado -->
+                 <select class="filters__select" id="filter-status" name="status">
+                    <option value="">Estado</option>
+                 </select>
+
+                 <!-- Filtro por genero -->
+                 <select class="filters__select" id="filter-gender" name="gender">
+                    <option value="">Género</option>
+                 </select>
+
+                 <!-- Restablecer filtros -->
+                  <button class="filters__reset" id="filters-reset" type="reset">Todos</button>
+
+            </form>
+
         </section>
 
         <section class="characters" aria-label="Personajes">
-            <!-- Tarjetas -->
+             <div class="characters__grid" id="characters-container">
+                <!-- Tarjetas -->
+                <article class="character-card">
+
+                    <div class="character-card__media">
+                        <img class="character-card__image" src="./assets/img/philip-j_-fry.webp" width="60" height="60" alt="Philip J. Fry">
+                    </div>
+
+                    <div class="character-card__info">
+                        <h2 class="character-card__name">Philip J. Fry</h2>
+
+                        <p class="character-card__details">
+                            <span class="character-card__species">Humano</span>
+                            <span aria-hidden="true">·</span>
+                            <span class="character-card__gender">Masculino</span>
+                        </p>
+                        
+                    </div>
+
+                    <button
+                        class="character-card__favorite"
+                        type="button"
+                        aria-label="Añadir a Philip J. Fry a mi tripulación"
+                        aria-pressed="false"
+                    >
+                        <img class="character-card__heart" src="./assets/icons/Corazon_vacio.png" width="35" height="35" alt="Corazón vacío">
+                    </button>
+
+                </article>
+             </div>
         </section>
 
         <nav class="pagination" aria-label="Paginación de personajes">
