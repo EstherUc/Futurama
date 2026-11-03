@@ -14,7 +14,7 @@
 </head>
 <body>
 
-    <header class="header">
+    <header class="header header--explore">
         <nav class="nav" aria-label="navegación principal">
 
             <a class="nav__brand" href="./index.html">
@@ -44,18 +44,102 @@
             </ul>
 
         </nav>
+
+        <div class="explore-intro">
+
+            <h1 class="explore-intro__title">
+                ARCHIVO
+                <span class="explore-intro__highlight">INTERGALÁCTICO</span>
+            </h1>
+
+            <p class="explore-intro__description">Conoce a los habitantes del universo Futurama</p>
+
+        </div>
         
     </header>
 
     <main class="main">
 
-        <section class="hero">
-            <!-- Portada con imagen, título y botones -->
+        <section class="filters" aria-label="Filtros de personajes">
+            
+            <form class="filters__form" id="character-filters">
+                <!-- Buscador -->
+                <input class="filters__search" id="character-search" type="search" name="search" placeholder="Buscar personaje...">
+
+                <!-- Filtro por especie -->
+                 <select class="filters__select" id="filter-species" name="species">
+                    <option value="">Especie</option>
+                 </select>
+
+                 <!-- Filtro por estado -->
+                 <select class="filters__select" id="filter-status" name="status">
+                    <option value="">Estado</option>
+                 </select>
+
+                 <!-- Filtro por genero -->
+                 <select class="filters__select" id="filter-gender" name="gender">
+                    <option value="">Género</option>
+                 </select>
+
+                 <!-- Restablecer filtros -->
+                  <button class="filters__reset" id="filters-reset" type="reset">Todos</button>
+
+            </form>
+
         </section>
 
-        <section class="features">
-            <!-- Descubre, Colecciona y Sorpréndete -->
+        <section class="characters" aria-label="Personajes">
+             <div class="characters__grid" id="characters-container">
+                <!-- Tarjetas -->
+                <article class="character-card">
+
+                    <div class="character-card__media">
+                        <img class="character-card__image" src="./assets/img/philip-j_-fry.webp" width="60" height="60" alt="Philip J. Fry">
+                    </div>
+
+                    <div class="character-card__info">
+                        <h2 class="character-card__name">Philip J. Fry</h2>
+
+                        <p class="character-card__details">
+                            <span class="character-card__species">Humano</span>
+                            <span aria-hidden="true">·</span>
+                            <span class="character-card__gender">Masculino</span>
+                        </p>
+                        
+                    </div>
+
+                    <button
+                        class="character-card__favorite"
+                        type="button"
+                        aria-label="Añadir a Philip J. Fry a mi tripulación"
+                        aria-pressed="false"
+                    >
+                        <img class="character-card__heart" src="./assets/icons/Corazon_vacio.png" width="35" height="35" alt="Corazón vacío">
+                    </button>
+
+                </article>
+             </div>
         </section>
+
+        <!-- Paginación -->
+        <nav class="pagination" id="pagination" aria-label="Paginación de personajes">
+
+            <button class="paginaton__button" id="prev-page" type="button" disabled>
+                <img class="pagination_icon" src="./assets/icons/flecha_izquierda_morada.svg" width="35" height="35" alt="Flecha izquierda paginación">
+            </button>
+
+            <button class="paginaton__button paginaton__button--active" type="button" data-page="1" aria-current="page">1</button>
+            <button class="paginaton__button" type="button" data-page="2">2</button>
+            <button class="paginaton__button" type="button" data-page="3">3</button>
+            <button class="paginaton__button" type="button" data-page="4">4</button>
+            <button class="paginaton__button" type="button" data-page="5">5</button>
+
+            <button class="paginaton__button" id="next-page" type="button">
+                <img class="pagination_icon" src="./assets/icons/flecha_morada.svg" width="35" height="35" alt="Flecha izquierda paginación">
+            </button>
+            
+        </nav>
+      
 
     </main>
 

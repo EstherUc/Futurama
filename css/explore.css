@@ -1,0 +1,316 @@
+
+/* ////////////////// MOBILE DESIGN //////////////////// */
+
+
+/* -------------------------------------------
+|                Header Styles               |
+----------------------------------------------*/
+
+.header--explore{
+    background-image: url("../assets/img/encabezado.png");
+    min-height: 330px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.explore-intro{
+    padding: 2px 8px 24px 24px;
+}
+
+.explore-intro__title{
+    font-family: var(--font-primary);
+    font-size: 2.5rem;
+    font-weight: 800;
+    line-height: 1.1;
+    color: var(--color-text);
+}
+
+.explore-intro__highlight{
+    display: block;
+    color: var(--color-secondary);
+}
+
+.explore-intro__description{
+    margin-top: 12px;
+    max-width: 260px;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: var(--color-text-secondary);
+    text-shadow: 0 2px 6px rgba(4,14,35,0.8);
+}
+
+
+
+/* -------------------------------------------
+|                 Nav Styles                 |
+----------------------------------------------*/
+
+
+
+/* -------------------------------------------
+|                Main Styles                  |
+----------------------------------------------*/
+
+/* *** SECCIÓN FILTROS *** */
+.filters{
+    padding: 16px 24px 0;
+}
+
+.filters__form{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+}
+
+/* estilos comunes input, selects y botón de los filtros */
+.filters__search,
+.filters__select,
+.filters__reset{ 
+    width: 100%;
+    min-height: 45px;
+    padding: 10px 16px;
+    font-family: var(--font-secondary);
+    font-size: 0.95rem;
+    border-radius: 10px;
+}
+
+/* buscador */
+.filters__search{
+    background-color: var(--color-primary);
+    color: var(--color-text);
+    border: 2px solid var(--color-border);
+
+    /* lupita morada */
+    background-image: url("../assets/icons/lupa_morada.svg");
+    background-repeat: no-repeat;
+    background-position: 16px center;
+    background-size: 22px;
+    padding-left: 48px;
+}
+
+.filters__search::placeholder{
+    color: var(--color-text-secondary);
+}
+
+/* despleagles - selects */
+.filters__select{
+    background-color: var(--color-primary);
+    color: var(--color-text);
+    border: 2px solid var(--color-border);
+    cursor: pointer;
+    color-scheme: dark;
+
+    /* desplegable moradito */
+    appearance: none;
+    background-image: url("../assets/icons/desplegable_morado.svg");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    background-size: 20px;
+    padding-right: 44px;
+}
+
+.filters__select option{
+    background-color: var(--color-primary);
+    color: var(--color-text);
+}
+
+/* botón Todos */
+.filters__reset{
+    background-color: var(--color-secondary);
+    color: var(--color-text-dark);
+    border: none;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+
+/* *** SECCIÓN TARJETAS *** */
+.characters{
+    padding: 16px 24px;
+}
+
+.characters__grid{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+}
+
+/* tarjetas personajes */
+.character-card{
+    position: relative;
+    display: grid;
+    grid-template-columns: 105px minmax(0, 1fr);
+    height: 115px;
+
+    background-color: var(--color-primary);
+    border: 2px solid var(--color-border);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+/* contenedor de la imagen de la tarjeta */
+.character-card__media{
+    overflow: hidden;
+    background-color: var(--color-surface);
+}
+
+/* imagen tarjeta */
+.character-card__image{
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* datos/información personaje */
+.character-card__info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 6px;
+    min-width: 0;
+    padding: 12px 42px 12px 20px;
+}
+
+.character-card__name{
+    font-family: var(--font-primary);
+    font-size: 1.3rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.character-card__details{
+    font-size: 0.75rem;
+    line-height: 1.4;
+    color: var(--color-text-secondary);
+}
+
+/* corazón - favorito */
+.character-card__favorite{
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+
+    width: 36px;
+    height: 36px;
+    
+    background-color: var(--color-background);
+    border: 2px solid var(--color-border);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.character-card__heart{
+    display: block;
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+
+
+/* -------------------------------------------
+|                   Footer                    |
+----------------------------------------------*/
+
+
+
+
+/*  /////////////////////////////////////////////////////////// 
+   //////////////   DESIGNS OF OTHER DEVICES   ///////////////
+/* ////////////////////////////////////////////////////////// */
+
+
+@media (min-width:768px){
+
+
+/* -------------------------------------------
+|                Header Styles               |
+----------------------------------------------*/
+
+.header--explore{
+    background-image: url(../assets/img/encabezado_web.png);
+    min-height: 300px;
+    background-size: cover;
+    background-position: center 30%;
+
+}
+
+.explore-intro{
+    padding: 8px 24px 24px;
+}
+
+.explore-intro__title{
+    font-size: 3.5rem;
+}
+
+.explore-intro__highlight{
+    display: inline;
+}
+
+.explore-intro__description{
+    max-width: none;
+    font-size: 1.1rem;
+}
+
+
+/* -------------------------------------------
+|                 Nav Styles                 |
+----------------------------------------------*/
+
+
+
+
+/* -------------------------------------------
+|                Main Styles                  |
+----------------------------------------------*/
+
+/* *** SECCIÓN FILTROS *** */
+.filters__form{
+    grid-template-columns: 2fr 1fr 1fr 1fr 0.6fr;
+}
+
+.filters__search{
+    grid-column: auto;
+}
+
+/* *** SECCIÓN TARJETAS *** */
+.characters__grid{
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 16px;
+}
+
+/* tarjetas personajes */
+.character-card{
+    grid-template-columns: 1fr;
+    grid-template-rows: 180px auto;
+    height: auto;
+}
+
+/* datos/información personaje */
+.character-card__info{
+    justify-content: flex-start;
+    padding: 12px 16px;
+}
+
+.character-card__details{
+    font-size: 0.85rem;
+}
+
+/* -------------------------------------------
+|                   Footer                    |
+----------------------------------------------*/
+
+
+}
+
+
+
+
+
+
