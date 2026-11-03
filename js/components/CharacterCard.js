@@ -6,7 +6,10 @@ function createCharacterCard(character) {
 
     const img = document.createElement("img");
     img.classList.add("character-card__image");
-    img.setAttribute("src",character.image);
+
+    //Si la API no proporciona imagen (null) ponemos imagen 
+    img.setAttribute("src",character.image || "./assets/img/sin_foto.png");
+
     img.setAttribute("width","60");
     img.setAttribute("height","60");
     img.setAttribute("alt",character.name);
@@ -41,14 +44,32 @@ function createCharacterCard(character) {
     gender.classList.add("character-card__gender");
     gender.textContent = character.gender;
 
-    details.append(species,separator,gender);
-    info.append(name,details);
+    //comprobar si vienen datos de especie y género o UNKNOW para mostrar o no
+    if(character.species !== "UNKNOWN"){
+        details.append(species); //añadimos especie si se conoce
+    }
+
+    if(character.species !== "UNKNOWN" && character.gender !== "UNKNOWN"){
+        details.append(separator); //añadimos el separador si se conoce especie y género
+    }
+
+    if(character.gender !== "UNKNOWN"){
+        details.append(gender); //añadimos género si se conoce
+    }
+
+    //añadir siempre el nombre
+    info.append(name);
+
+    //añadir los detalles solo si existe algún dato conocido
+    if(character.species !== "UNKNOWN" || character.gender !== "UNKNOWN"){
+        info.append(details);
+    }
 
     ///// botón TODOS /////
     const btn = document.createElement("button");
     btn.classList.add("character-card__favorite");
     btn.setAttribute("type","button");
-    btn.setAttribute("aria-label",'Añadir a ${character.name} a mi tripulación');
+    btn.setAttribute("aria-label",`Añadir a ${character.name} a mi tripulación`);
     btn.setAttribute("aria-pressed","false");
 
     //imagen corazón
@@ -70,6 +91,10 @@ function createCharacterCard(character) {
 
     return article;
     
+}
+
+function isKnow(value) {
+    return typeof value === "string" && value.trim() !== "" && value.trim().toLocaleUpperCase() !=="UNKNOWN";
 }
 
 export default createCharacterCard;
