@@ -147,6 +147,9 @@
     border: 2px solid var(--color-border);
     border-radius: 12px;
     overflow: hidden;
+
+    /* animación tarjeta */
+    transition: transform 0.3s ease;
 }
 
 /* contenedor de la imagen de la tarjeta */
@@ -161,6 +164,9 @@
     width: 100%;
     height: 100%;
     object-fit: contain;
+
+    /* animación imagen */
+    /* transition: transform 1s ease; */
 }
 
 /* datos/información personaje */
@@ -218,6 +224,70 @@
     text-align: center;
     padding: 32px 16px;
 }
+
+/* tarjeta sube un poco al pasar el ratón */
+@media (hover:hover){
+    .character-card:hover{
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(120, 85, 217, 0.25);
+    }
+
+    /* imagen con un poco de zoom */
+    /* .character-card:hover .character-card__image{
+        transform: scale(1.05);
+    }  */
+}
+
+/* *** PAGINACIÓN *** */
+
+/* nav */
+.pagination{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    padding: 16px 24px 24px;
+}
+
+/* botones paginación */
+.pagination__button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    background-color: var(--color-primary);
+    color: var(--color-text);
+    border: 2px solid var(--color-border);
+    border-radius: 50px;
+
+    font-family: var(--font-secondary);
+    font-size: 0.85rem;
+    cursor: pointer;
+}
+
+/* pag seleccionada */
+.pagination__button--active{
+    background-color: var(--color-secondary);
+    color: var(--color-text-dark);
+    border-color: var(--color-secondary);
+    font-weight: 700;
+}
+
+/* botón deshabilitado */
+.pagination__button:disabled{
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+/* icono fechas */
+.pagination_icon{
+    display: block;
+    width: 18px;
+    height: 18px;
+}
+
+
 
 
 
@@ -290,6 +360,8 @@
 .characters__grid{
     grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
     gap: 18px;
+    min-height: 515px;
+    align-content: start;
 }
 
 /* tarjetas personajes */
@@ -308,6 +380,20 @@
 .character-card__details{
     font-size: 0.85rem;
 }
+
+/* *** PAGINACIÓN *** */
+
+/* nav */
+.pagination{
+    gap: 10px;
+}
+
+/* botones paginación */
+.pagination__button{
+    width: 35px;
+    height: 35px;
+}
+
 
 /* -------------------------------------------
 |                   Footer                    |
