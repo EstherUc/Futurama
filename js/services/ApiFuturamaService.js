@@ -8,7 +8,7 @@ class ApiFuturamaService {
   async getCharacters(){
     //const url = `${API_URL}/characters`;
     const url = new URL(`${API_URL}/characters`);
-    url.searchParams.append("size", 84);
+    url.searchParams.append("size", 98);
     const urlString = url.toString();
 
     const response = await fetch(urlString);
