@@ -6,9 +6,12 @@ class ApiFuturamaService {
 
   //obtener todos los personajes
   async getCharacters(){
-    const url = `${API_URL}/characters`;
+    //const url = `${API_URL}/characters`;
+    const url = new URL(`${API_URL}/characters`);
+    url.searchParams.append("size", 84);
+    const urlString = url.toString();
 
-    const response = await fetch(url);
+    const response = await fetch(urlString);
 
     if(!response.ok){
       throw new ApiError("No se han podido obtener los personajes",response.status);

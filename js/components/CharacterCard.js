@@ -44,6 +44,11 @@ function createCharacterCard(character) {
     gender.classList.add("character-card__gender");
     gender.textContent = character.gender;
 
+    //estado
+    const status = document.createElement("span");
+    status.classList.add("character-card__status");
+    status.textContent = character.status;
+
     //comprobar si vienen datos de especie y género o UNKNOW para mostrar o no
     if(character.species !== "UNKNOWN"){
         details.append(species); //añadimos especie si se conoce
@@ -55,6 +60,19 @@ function createCharacterCard(character) {
 
     if(character.gender !== "UNKNOWN"){
         details.append(gender); //añadimos género si se conoce
+    }
+
+    if (character.status !== "UNKNOWN") {
+        //Si ya existe especie o género añadimos separador
+        if (details.childElementCount > 0) {
+            const separatorStatus = document.createElement("span");
+            separatorStatus.setAttribute("aria-hidden", "true");
+            separatorStatus.textContent = " - ";
+
+            details.append(separatorStatus);
+        }
+
+        details.append(status);
     }
 
     //añadir siempre el nombre
@@ -93,8 +111,5 @@ function createCharacterCard(character) {
     
 }
 
-function isKnow(value) {
-    return typeof value === "string" && value.trim() !== "" && value.trim().toLocaleUpperCase() !=="UNKNOWN";
-}
 
 export default createCharacterCard;
