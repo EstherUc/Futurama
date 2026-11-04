@@ -131,15 +131,18 @@ function updatePagination(){
         const buttonPage = Number(button.dataset.page);
 
         //ocultar botones de pag que no existan
-        button.hidden = buttonPage > totalPages;
+        //button.hidden = buttonPage > totalPages;
+
+        //deshabilitar botones de pag que no existan
+        button.disabled = buttonPage > totalPages;
 
         if (buttonPage === page && totalPages > 0) {
             
             //añadir la class del botón activo
-            button.classList.add("paginaton__button--active");
+            button.classList.add("pagination__button--active");
 
         }else{
-            button.classList.remove("paginaton__button--active"); //quitar class activa a los demás button
+            button.classList.remove("pagination__button--active"); //quitar class activa a los demás button
         }
     
     });
