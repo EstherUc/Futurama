@@ -212,6 +212,13 @@
     object-fit: contain;
 }
 
+ /* para el mensaje de "No se han encontrado personajes" */
+.characters__empty {
+    color: var(--color-text-secondary);
+    text-align: center;
+    padding: 32px 16px;
+}
+
 
 
 /* -------------------------------------------
