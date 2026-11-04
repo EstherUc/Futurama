@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Futurama</title>
+    <link rel="icon" href="assets/img/logo.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/variables.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/explore.css">
+</head>
+<body>
+
+    <header class="header header--explore">
+        <nav class="nav" aria-label="navegación principal">
+
+            <a class="nav__brand" href="./index.html">
+                <img class="nav__logo" src="./assets/img/logo.png" width="60" height="60" alt="Logo Planet Espress - Inicio" >
+            </a>
+
+            <button 
+                class="nav__menu-burger" 
+                id="button-burger"
+                type="button" 
+                aria-label="Abrir menú" 
+                aria-expanded="false" 
+                aria-controls="main-navigation">
+                ☰
+            </button>
+
+            <ul class="nav__menu" id="main-navigation">
+                <li class="nav__item">
+                    <a class="nav__link" href="./index.html">Inicio</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link nav__link--active" href="./explore.html" aria-current="page">Explorar</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="./myCrew.html">Mi tripulación</a>
+                </li>
+            </ul>
+
+        </nav>
+
+        <div class="explore-intro">
+
+            <h1 class="explore-intro__title">
+                ARCHIVO
+                <span class="explore-intro__highlight">INTERGALÁCTICO</span>
+            </h1>
+
+            <p class="explore-intro__description">Conoce a los habitantes del universo Futurama</p>
+
+        </div>
+        
+    </header>
+
+    <main class="main">
+
+        <section class="filters" aria-label="Filtros de personajes">
+            
+            <form class="filters__form" id="character-filters">
+                <!-- Buscador -->
+                <input class="filters__search" id="character-search" type="search" name="search" placeholder="Buscar personaje...">
+
+                <!-- Filtro por especie -->
+                 <select class="filters__select" id="filter-species" name="species">
+                    <option value="">Especie</option>
+                 </select>
+
+                 <!-- Filtro por estado -->
+                 <select class="filters__select" id="filter-status" name="status">
+                    <option value="">Estado</option>
+                 </select>
+
+                 <!-- Filtro por genero -->
+                 <select class="filters__select" id="filter-gender" name="gender">
+                    <option value="">Género</option>
+                 </select>
+
+                 <!-- Restablecer filtros -->
+                  <button class="filters__reset" id="filters-reset" type="reset">Todos</button>
+
+            </form>
+
+        </section>
+
+        <section class="characters" aria-label="Personajes">
+             <div class="characters__grid" id="characters-container">
+                <!-- Tarjetas -->
+             </div>
+        </section>
+
+        <!-- Paginación -->
+        <nav class="pagination" id="pagination" aria-label="Paginación de personajes">
+
+            <button class="paginaton__button" id="prev-page" type="button" disabled>
+                <img class="pagination_icon" src="./assets/icons/flecha_izquierda_morada.svg" width="35" height="35" alt="Flecha izquierda paginación">
+            </button>
+
+            <button class="paginaton__button paginaton__button--active" type="button" data-page="1" aria-current="page">1</button>
+            <button class="paginaton__button" type="button" data-page="2">2</button>
+            <button class="paginaton__button" type="button" data-page="3">3</button>
+            <button class="paginaton__button" type="button" data-page="4">4</button>
+            <button class="paginaton__button" type="button" data-page="5">5</button>
+            <button class="paginaton__button" type="button" data-page="6">6</button>
+
+            <button class="paginaton__button" id="next-page" type="button">
+                <img class="pagination_icon" src="./assets/icons/flecha_morada.svg" width="35" height="35" alt="Flecha izquierda paginación">
+            </button>
+            
+        </nav>
+      
+
+    </main>
+
+    <footer class="footer">
+        <p class="footer__copyright">© 2026 Planet Express · Proyecto educativo</p>
+        <p class="footer__author">Esther Uclés</p>
+    </footer>
+    
+
+  <script type="module" src="js/pages/explore.js"></script>
+</body>
+</html>
