@@ -81,8 +81,8 @@ function createCharacterCard(character) {
     //añadir siempre el nombre
     info.append(name);
 
-    //añadir los detalles solo si existe algún dato conocido
-    if(character.species !== "UNKNOWN" || character.gender !== "UNKNOWN"){
+    //añadir los detalles solo si hemos añadido algún dato (especie, genero o estado)
+    if(details.childElementCount > 0){
         info.append(details);
     }
 

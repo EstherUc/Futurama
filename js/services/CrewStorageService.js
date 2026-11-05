@@ -84,5 +84,6 @@ export{
     saveCrewToLocalStorage,
     isInCrew,
     toggleCrewMember,
-    removeCrewMember
+    removeCrewMember,
+    MAX_CREW
 }

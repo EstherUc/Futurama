@@ -7,7 +7,7 @@ import { getCrewFromLocalStorage, removeCrewMember,MAX_CREW } from "../services/
 const crewContainer = document.getElementById("crew-container");
 
 //elementos - Formando tripulación
-const crewCount = document.getElementById("crew-container");
+const crewCount = document.getElementById("crew-count");
 const crewTitle = document.getElementById("crew-status-title");
 const crewMessage =  document.getElementById("crew-message");
 const crewProgress = document.getElementById("crew-progress");
@@ -33,7 +33,7 @@ function createCrewCard(character) {
 
     //nombre
     const name = document.createElement("h3");
-    name.classList("crew__name");
+    name.classList.add("crew__name");
     name.textContent = character.name;
 
     card.append(img,name);
@@ -41,7 +41,7 @@ function createCrewCard(character) {
     //mostrar especie si tiene
     if(character.species && character.species !== "UNKNOWN"){
 
-        const species = documento.createElement("p");
+        const species = document.createElement("p");
         species.classList.add("crew__species");
         species.textContent = character.species;
 
@@ -141,6 +141,37 @@ function updateCrewStatus(crew) {
     });
 
 }
+
+//mostrar la tripulación
+function renderCrew() {
+
+    //coger los personajes de localStorage
+    const crew = getCrewFromLocalStorage();
+
+    //quitar huecos que estaban anteriormente
+    crewContainer.replaceChildren();
+
+    //mostrar personajes elegidos
+    crew.forEach(character => {
+        
+        const card = createCrewCard(character);
+        crewContainer.append(card);
+    });
+
+    //crear huecos vacíos que faltan hasta los 6 
+    for(let i=crew.length; i<MAX_CREW; i++){
+
+        const emptySlot = createEmptySlot();
+        crewContainer.append(emptySlot);
+    }    
+
+    //actualizar contador, mensaje y bolitas
+    updateCrewStatus(crew);
+}
+
+
+//mostrar personajes guardados al cargar Mi tripulación
+renderCrew();
 
 
 
