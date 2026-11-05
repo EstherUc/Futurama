@@ -49,8 +49,24 @@ body{
 
 
 /* -------------------------------------------
-|                Header Styles               |
+|                  Portada                   |
 ----------------------------------------------*/
+
+/* imagen de fondo del index */
+.home-page{
+    background-image: url("../assets/img/Portada.png");
+    background-repeat: no-repeat;
+    background-position: 72% top;
+    background-size: cover;
+}
+
+/* sección principal de la portada */
+.home-page .hero{
+    padding: 10px 24px 24px;
+}
+
+
+
 
 /* -------------------------------------------
 |                 Nav Styles                 |
@@ -147,6 +163,7 @@ body{
     font-family: var(--font-primary);
     font-size: 2.5rem;
     line-height: 1.1;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.85);
 }
 
 .hero__title-highlight{
@@ -158,6 +175,19 @@ body{
     color: var(--color-text-secondary);
     line-height: 1.5;
     margin-top: 16px;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
+}
+
+/* fondo semitransparente para la descripción del index */
+.home-page .hero__description,
+.explore-intro__description,
+.crew-intro__description{
+    display: inline-block;
+    width: fit-content;
+    max-width: 92%;
+    padding: 8px 12px;
+    background-color: rgba(4, 14, 35, 0.75);
+    border-radius: 8px;
 }
 
 /* contenedor de los botones */
@@ -166,6 +196,11 @@ body{
     flex-direction: column;
     gap: 16px;
     margin-top: 24px;
+}
+
+/* separar los botones del texto en el index */
+.home-page .hero__actions{
+    margin-top: 200px;
 }
 
 /* estilos comunes para los dos botones */
@@ -182,12 +217,27 @@ body{
     font-weight: 600;
     text-align: center;
     cursor: pointer;
+
+    transition: transform 0.3s ease;
 }
 
 .hero__button-arrow{
     width: 22px;
     height: 22px;
     flex-shrink: 0; /* Para que la flecha conserve su tamaño aunque el botón tenga poco espacio */
+    transition: transform 0.3s ease;
+}
+
+@media (hover:hover){
+    /* sube un poco el botón */
+    .hero__button:hover{
+        transform: translateY(-2px);
+    }
+
+    /* desplazar la flecha un poco a la derecha */
+    .hero__button:hover .hero__button-arrow{
+        transform: translateX(5px);
+    }
 }
 
 /* botón principal - Explorar */
@@ -198,7 +248,7 @@ body{
 
 /* botón secundario - Mi tripulación */
 .hero__button--secondary{
-    background-color: transparent;
+    background-color: rgba(4, 14, 35, 0.9);
     color: var(--color-text);
     border-color: var(--color-border);
 }
@@ -247,8 +297,21 @@ body{
 
 
 /* -------------------------------------------
-|                Header Styles               |
+|                  Portada                   |
 ----------------------------------------------*/
+/* imagen de fondo del index */
+.home-page{
+    background-position: center top;
+    background-size: cover;
+}
+
+/* sección principal de la portada */
+.home-page .hero{
+    padding: 60px 40px;
+}
+
+
+
 /* -------------------------------------------
 |                 Nav Styles                 |
 ----------------------------------------------*/
@@ -280,6 +343,20 @@ body{
 .hero__actions{
     flex-direction: row;
 }
+
+.home-page .hero__actions{
+    margin-top: 24px;
+}
+
+
+.home-page .hero__title{
+    font-size: 4rem;
+}
+
+.home-page .hero__description{
+    font-size: 1.1rem;
+}
+
 
 
 /* -------------------------------------------
