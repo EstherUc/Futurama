@@ -1,5 +1,5 @@
 import "../components/NavMenu.js";
-import { getCrewFromLocalStorage, removeCrewMember,MAX_CREW } from "../services/CrewStorageService.js";
+import { getCrewFromLocalStorage, removeCrewMember,MAX_CREW,clearCrew } from "../services/CrewStorageService.js";
 
 //DOM
 
@@ -11,6 +11,7 @@ const crewCount = document.getElementById("crew-count");
 const crewTitle = document.getElementById("crew-status-title");
 const crewMessage =  document.getElementById("crew-message");
 const crewProgress = document.getElementById("crew-progress");
+const clearCrewButton = document.getElementById("crew-clear");
 
 //Crear Tarjeta tripulante
 function createCrewCard(character) {
@@ -148,6 +149,12 @@ function renderCrew() {
     //coger los personajes de localStorage
     const crew = getCrewFromLocalStorage();
 
+     if(crew.length === 0){
+        clearCrewButton.disabled = true;
+    }else{
+        clearCrewButton.disabled = false;
+    }
+
     //quitar huecos que estaban anteriormente
     crewContainer.replaceChildren();
 
@@ -167,7 +174,21 @@ function renderCrew() {
 
     //actualizar contador, mensaje y bolitas
     updateCrewStatus(crew);
+
+   
 }
+
+
+//evento para vaciar tripulación
+clearCrewButton.addEventListener("click", () => {
+    //eliminar todos los tripulantes/personajes del localStorage
+    clearCrew();
+
+    //volver a mostras los 6 huecos vacíos y actualizar las bolitas
+    renderCrew();
+})
+
+
 
 
 //mostrar personajes guardados al cargar Mi tripulación
