@@ -14,7 +14,7 @@
 </head>
 <body>
 
-    <header class="header">
+    <header class="header header--crew">
         <nav class="nav" aria-label="navegación principal">
 
             <a class="nav__brand" href="./index.html">
@@ -47,18 +47,81 @@
             </ul>
 
         </nav>
+
+        <div class="crew-intro">
+
+            <h1 class="crew-intro__title">
+                MI <span class="crew-intro__highlight">TRIPULACIÓN</span>
+            </h1>
+
+            <p class="crew-intro__description">Tu equipo para conquistar la galaxia.</p>
+
+        </div>
         
     </header>
 
     <main class="main">
 
-        <section class="hero">
-            <!-- Portada con imagen, título y botones -->
-        </section>
+        <section class="crew">
 
-        <section class="features">
-            <!-- Descubre, Colecciona y Sorpréndete -->
-        </section>
+            <!-- Cabecera de la sección -->
+            <div class="crew__header">
+                <div class="crew__header-top">
+
+                    <h2 class="crew__title">TU TRIPULACIÓN</h2>
+                    <button class="crew__clear" id="crew-clear" type="button" disabled>
+                        <img src="./assets/icons/papelera_rosa.png" width="20" height="20" alt="Papelera vaciar tripulantes">
+                        Vaciar tripulación
+                    </button>
+
+                </div>
+    
+                <p class="crew__description">Selecciona hasta 6 tripulantes para tus misiones.</p>
+            </div>
+            
+            <!-- Contenedor de tarjetas y panel -->
+            <div class="crew__grid">
+
+                <!-- Los seis huecos -->
+                <div class="crew__slots" id="crew-container">
+
+                    <!-- Tarjetas dinámicas -->
+
+                </div>
+
+                <!-- Panel con el estado de la tripulación -->
+                <aside class="crew-status">
+
+                    <h2 class="crew-status__title" id="crew-status-title">FORMANDO TRIPULACIÓN</h2>
+
+                    <p class="crew-status__count">
+                        <span id="crew-count">0</span> de 6 tripulantes
+                    </p>
+
+                    <p class="crew-status__message" id="crew-message">
+                        ¡Tu aventura está a punto de comenzar!
+                        Recluta a tus primeros tripulantes.
+                    </p>
+
+                    <!-- Indicadores de progreso -->
+                    <div class="crew-status__progress" id="crew-progress" aria-hidden="true">
+
+                        <span class="crew-status__dot"></span>
+                        <span class="crew-status__dot"></span>
+                        <span class="crew-status__dot"></span>
+                        <span class="crew-status__dot"></span>
+                        <span class="crew-status__dot"></span>
+                        <span class="crew-status__dot"></span>
+
+                    </div>
+
+                </aside>
+
+            </div>
+
+        
+
+    </section>
 
     </main>
 

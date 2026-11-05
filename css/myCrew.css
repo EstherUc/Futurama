@@ -1,0 +1,360 @@
+/* ////////////////// MOBILE DESIGN //////////////////// */
+
+
+/* -------------------------------------------
+|                Header Styles               |
+----------------------------------------------*/
+
+.header--crew{
+    background-image: url("../assets/img/encabezado.png");
+    min-height: 300px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.crew-intro{
+    padding: 8px 8px 24px 24px;
+}
+
+.crew-intro__title{
+    font-family: var(--font-primary);
+    font-size: 2.5rem;
+    font-weight: 800;
+    line-height: 1.1;
+    color: var(--color-text);
+}
+
+.crew-intro__highlight{
+    display: inline;
+    color: var(--color-secondary);
+}
+
+.crew-intro__description{
+    margin-top: 12px;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: var(--color-text-secondary);
+    text-shadow: 0 2px 8px rgba(0,0,0,0.9);
+}
+
+
+
+/* -------------------------------------------
+|                 Nav Styles                 |
+----------------------------------------------*/
+
+/* -------------------------------------------
+|                Main Styles                  |
+----------------------------------------------*/
+
+/* *** SECCIÓN MI TRIPULACIÓN *** */
+.crew{
+    margin: 16px 24px;
+    padding: 16px;
+    background-color: var(--color-primary);
+    border: 2px solid var(--color-border);
+    border-radius: 16px;
+}
+
+/* cabecera sección */
+.crew__header{
+    margin-bottom: 20px;
+}
+
+.crew__title{
+    font-family: var(--font-primary);
+    font-size: 1.7rem;
+    font-weight: 800;
+    color: var(--color-text);
+}
+
+.crew__header-top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.crew__clear{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    background-color: var(--color-background);
+    color: var(--color-text-secondary);
+    border: 2px solid var(--color-border);
+    border-radius: 8px;
+
+    font-family: var(--font-secondary);
+    font-size: 0.8rem;
+    cursor: pointer;
+}
+
+.crew__clear:disabled{
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.crew__description{
+    margin-top: 8px;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    color: var(--color-text-secondary);
+}
+
+/* contenedor de los 6 huecos */
+.crew__slots{
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0,1fr));
+    gap: 12px;
+}
+
+/* hueco de tripulante */
+.crew__slot{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+    min-height: 180px;
+    padding: 12px;
+    border-radius: 12px;
+
+    text-align: center;
+    font-size: 0.8rem;
+    color: var(--color-text-secondary);
+}
+
+/* hueco vacio */
+.crew__slot--empty{
+    border: 2px dashed var(--color-secondary);
+    background-color: var(--color-background);
+    cursor: pointer;
+}
+
+/* símbolo + */
+.crew__plus{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 52px;
+    height: 52px;
+    border: 3px solid var(--color-secondary);
+    border-radius: 50%;
+
+    font-size: 2.5rem;
+    font-weight: 400;
+    line-height: 1;
+    color: var(--color-secondary);
+}
+
+/* *** TARJETA DE TRIPULANTE SELECCIONADO *** */
+.crew__slot--filled{
+    position: relative;
+    justify-content: flex-start;
+    gap: 6px;
+    border: 2px solid var(--color-border);
+    background-color: var(--color-background);
+}
+
+/* imagen del tripulante */
+.crew__image{
+    display: block;
+    width: 100%;
+    height: 105px;
+    object-fit: contain;
+}
+
+/* nombre */
+.crew__name{
+    font-family: var(--font-primary);
+    font-size: 1.15rem;
+    font-weight: 700;
+    line-height: 1.1;
+    color: var(--color-text);
+    overflow-wrap: anywhere;
+}
+
+/* especie */
+.crew__species{
+    font-size: 0.75rem;
+    color: var(--color-text-secondary);
+}
+
+/* botón X para quitar tripulante */
+.crew__remove{
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    background-color: var(--color-background);
+    border: 2px solid var(--color-border);
+    border-radius: 50%;
+    color: var(--color-text);
+    font-size: 1.4rem;
+    cursor: pointer;
+}
+
+@media (hover:hover){
+
+    .crew__remove:hover {
+        color: var(--color-secondary);
+        border-color: var(--color-secondary);
+    }
+}
+
+/* *** SECCIÓN FORMANDO TRIPULACIÓN *** */
+.crew-status{
+    margin-top: 24px;
+    padding: 20px 16px;
+    border: 2px solid var(--color-border);
+    border-radius: 12px;
+    background-color: var(--color-background);
+    text-align: center;
+}
+
+.crew-status__title{
+    font-family: var(--font-primary);
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--color-secondary);
+    margin-bottom: 8px;
+}
+
+.crew-status__message{
+    margin-top: 16px;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: var(--color-text-secondary);
+}
+
+/* las bolitas */
+.crew-status__progress{
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+.crew-status__dot{
+    width: 26px;
+    height: 26px;
+    border: 2px solid var(--color-secondary);
+    border-radius: 50%;
+}
+
+/* bolita rellena cuando hay tipulante */
+.crew-status__dot--filled{
+    background-color: var(--color-secondary);
+}
+
+/* efecto al pasar el ratón */
+@media (hover:hover){
+    .crew__slot--empty{
+        transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+
+    .crew__slot--empty:hover{
+        transform: translateY(-4px);
+        background-color: var(--color-primary);
+    }
+}
+
+
+
+
+
+
+
+
+/*  /////////////////////////////////////////////////////////// 
+   //////////////   DESIGNS OF OTHER DEVICES   ///////////////
+/* ////////////////////////////////////////////////////////// */
+
+
+@media (min-width:768px){
+
+
+/* -------------------------------------------
+|                Header Styles               |
+----------------------------------------------*/
+
+.header--crew{
+    background-image: url(../assets/img/encabezado_web.png);
+    min-height: 300px;
+    background-size: cover;
+    background-position: center 30%;
+
+}
+
+
+/* -------------------------------------------
+|                 Nav Styles                 |
+----------------------------------------------*/
+
+/* -------------------------------------------
+|                Main Styles                  |
+----------------------------------------------*/
+
+/* *** SECCIÓN MI TRIPULACIÓN *** */
+/* contenedor general de las 6 tarjetas y el panel */
+.crew__grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(200px,1fr));
+    gap: 16px;
+    align-items: stretch;
+}
+
+.crew__slots{
+    display: contents;
+}
+
+.crew__slot{
+    min-height: 230px;
+}
+
+/* el panel ocupa el luegar de una tarjeta más (como si fuera el séptimo lugar) */
+.crew-status{
+    grid-column: span 2;
+    margin-top: 0;
+    min-height: 230px;
+    padding: 16px 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* bolitas */
+.crew-status__progress{
+    gap: 12px;
+}
+
+.crew-status__dot{
+    width: 24px;
+    height: 24px;
+}
+
+.crew__image{
+    height: 140px;
+}
+
+
+
+
+
+
+
+
+/* -------------------------------------------
+|                   Footer                    |
+----------------------------------------------*/
+
+
+}
