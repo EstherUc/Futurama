@@ -69,6 +69,34 @@
     color: var(--color-text);
 }
 
+.crew__header-top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.crew__clear{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    background-color: var(--color-background);
+    color: var(--color-text-secondary);
+    border: 2px solid var(--color-border);
+    border-radius: 8px;
+
+    font-family: var(--font-secondary);
+    font-size: 0.8rem;
+    cursor: pointer;
+}
+
+.crew__clear:disabled{
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
 .crew__description{
     margin-top: 8px;
     font-size: 0.85rem;
@@ -197,6 +225,7 @@
     font-size: 1.6rem;
     font-weight: 800;
     color: var(--color-secondary);
+    margin-bottom: 8px;
 }
 
 .crew-status__message{

@@ -1,3 +1,6 @@
+import { isInCrew, toggleCrewMember } from "../services/CrewStorageService.js";
+
+
 function createCharacterCard(character) {
 
     ///// contenedor media (imagen) /////
@@ -78,8 +81,8 @@ function createCharacterCard(character) {
     //añadir siempre el nombre
     info.append(name);
 
-    //añadir los detalles solo si existe algún dato conocido
-    if(character.species !== "UNKNOWN" || character.gender !== "UNKNOWN"){
+    //añadir los detalles solo si hemos añadido algún dato (especie, genero o estado)
+    if(details.childElementCount > 0){
         info.append(details);
     }
 
@@ -87,16 +90,53 @@ function createCharacterCard(character) {
     const btn = document.createElement("button");
     btn.classList.add("character-card__favorite");
     btn.setAttribute("type","button");
-    btn.setAttribute("aria-label",`Añadir a ${character.name} a mi tripulación`);
     btn.setAttribute("aria-pressed","false");
 
-    //imagen corazón
+    //corazón favoritos
     const imgBtn = document.createElement("img");
     imgBtn.classList.add("character-card__heart");
-    imgBtn.setAttribute("src","./assets/icons/Corazon_vacio.png");
+    //imgBtn.setAttribute("src","./assets/icons/Corazon_vacio.png");
     imgBtn.setAttribute("width","35");
     imgBtn.setAttribute("height","35");
     imgBtn.setAttribute("alt","Corazón favorito vacío");
+
+    //actualizar dibujo del corazón
+    function updateHeart() {
+
+        //comprobar si el personaje está en la tirpulación
+        const isFavorite = isInCrew(character);
+        
+        if (isFavorite) {
+
+            //corazón rosa si está en la tripulación
+            imgBtn.setAttribute("src", "./assets/icons/Corazon_relleno_rosa.svg");
+            btn.setAttribute("aria-pressed", "true");
+            
+        } else {
+            //corazón vacío si no está
+            imgBtn.setAttribute("src","./assets/icons/Corazon_vacio.png");
+            btn.setAttribute("aria-pressed", false);
+        }
+    }
+
+    //cuando se pulse el corazón
+    btn.addEventListener("click", () => {
+
+        //añadir o quitar del localStorage
+        const result = toggleCrewMember(character);
+
+        //si hay 6
+        if (result === "full") {
+            alert('Nave al completo!!! Ya tienes 6 tripulantes. Libera una plaza para añadir otro personaje a tu tripulación.')
+        } else {
+            //actualizar el corazón según el nuevo estado
+            updateHeart();
+        }
+    });
+
+    //al crear tarjeta mirar si ya es favorito
+    updateHeart();
+
 
     btn.append(imgBtn);
 
