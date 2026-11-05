@@ -79,11 +79,17 @@ function removeCrewMember(character) {
 
 }
 
+//vaciar toda la tripulación
+function clearCrew() {
+    localStorage.setItem("planetExpressCrew", []);
+}
+
 export{
     getCrewFromLocalStorage,
     saveCrewToLocalStorage,
     isInCrew,
     toggleCrewMember,
     removeCrewMember,
-    MAX_CREW
+    MAX_CREW,
+    clearCrew
 }
