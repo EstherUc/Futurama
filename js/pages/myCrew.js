@@ -96,4 +96,51 @@ function createEmptySlot() {
 }
 
 
+//actualizar panel formando tripulación
+function updateCrewStatus(crew) {
+    
+    //actualizar nº de tripulantes
+    crewCount.textContent = crew.length;
+
+    if (crew.length === 0) {
+        
+        crewTitle.textContent = "FORMANDO TRIPULACIÓN";
+        crewMessage.textContent = "Tu aventura está a punto de comenzar! Recluta a tus primeros tripulantes.";
+
+    }else if (crew.length === MAX_CREW){
+
+        crewTitle.textContent = "TRIPULACIÓN COMPLETA";
+        crewMessage.textContent = "Motores encendidos! Tu equipo está listo para conquistar la galaxia.";
+
+    }else if(crew.length === MAX_CREW - 1){
+
+        crewTitle.textContent = "TRIPULACIÓN CASI LISTA";
+        crewMessage.textContent = "Solo queda una plaza. ¿Quién será tu último fichaje?";
+
+    }else{
+
+        crewTitle.textContent = "FORMANDO TRIPULACIÓN";
+        crewMessage.textContent = "Tu equipo está creciendo! Sigue reclutando tripulantes para tus misiones.";
+    }
+
+    //seleccionar bolitas
+    const dots = crewProgress.querySelectorAll(".crew-status__dot");
+
+    //rellenar bolitas
+    dots.forEach((dot,index) => {
+
+        if (index < crew.length) {
+            
+            dot.classList.add("crew-status__dot--filled");
+
+        }else{
+
+            dot.classList.remove("crew-status__dot--filled");
+        }
+
+    });
+
+}
+
+
 
