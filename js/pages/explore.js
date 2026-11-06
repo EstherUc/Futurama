@@ -40,12 +40,8 @@ async function loadCard() {
         //obtener los personajes de la API
         const result = await api.getCharacters();
 
-        //console.log(result); //HACK
-
         //extraer el array de personajes
         characters = result.items;
-
-        //console.log(characters); //HACK
         
         //para que al inicio no haya filtros aplicados
         filteredCharacters = characters
@@ -55,8 +51,6 @@ async function loadCard() {
         setSelectOptions(statusSelect, "status");
         setSelectOptions(genderSelect, "gender");
 
-        //mostrar al inicio todos los personajes HACK
-        //renderCharacters(characters); //HACK
 
         //mostrar la primera página
         loadPage();
